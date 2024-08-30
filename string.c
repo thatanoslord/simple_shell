@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * _strlen - returns the length of a string
+ * shell_strlen - returns the length of a string
  * @ss: the string whose length to check
  *
  * Return: integer length of string
  */
-int _strlen(char *ss)
+int shell_strlen(char *ss)
 {
 	int i = 0;
 
@@ -19,13 +19,13 @@ int _strlen(char *ss)
 }
 
 /**
- * _strcmp - performs lexicogarphic comparison of two strangs.
+ * shell_strcmp - performs lexicogarphic comparison of two strangs.
  * @a1: the first strang
  * @a2: the second strang
  *
  * Return: negative if s1 < s2, positive if s1 > s2, zero if s1 == s2
  */
-int _strcmp(char *a1, char *a2)
+int shell_strcmp(char *a1, char *a2)
 {
 	while (*a1 && *a2)
 	{
@@ -41,13 +41,13 @@ int _strcmp(char *a1, char *a2)
 }
 
 /**
- * starts_with - checks if needle starts with haystack
+ * *shell_starts_with - checks if needle starts with haystack
  * @haystacks: string to search
  * @needle: the substring to find
  *
  * Return: address of next char of haystack or NULL
  */
-char *starts_with(const char *haystacks, const char *needle)
+char *shell_starts_with(const char *haystacks, const char *needle)
 {
 	while (*needle)
 		if (*needle++ != *haystacks++)
@@ -56,13 +56,13 @@ char *starts_with(const char *haystacks, const char *needle)
 }
 
 /**
- * _strcat - concatenates two strings
+ * *shell_strcat - concatenates two strings
  * @dests: the destination buffer
  * @src: the source buffer
  *
  * Return: pointer to destination buffer
  */
-char *_strcat(char *dests, char *src)
+char *shell_strcat(char *dests, char *src)
 {
 	char *ret = dests;
 
