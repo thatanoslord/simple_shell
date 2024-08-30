@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * _erratoi - converts a string to an integer
+ * shell_erratoi - converts a string to an integer
  * @x: the string to be converted
  * Return: 0 if no numbers in string, converted number otherwise
  *       -1 on error
  */
-int _erratoi(char *x)
+int shell_erratoi(char *x)
 {
 	int i = 0;
 	unsigned long int result = 0;
@@ -29,13 +29,13 @@ int _erratoi(char *x)
 }
 
 /**
- * print_error - prints an error message
+ * shell_print_error - prints an error message
  * @infoo: the parameter & return info struct
  * @estr: string containing specified error type
  * Return: 0 if no numbers in string, converted number otherwise
  *        -1 on error
  */
-void print_error(info_t *infoo, char *estr)
+void shell_print_error(info_t *infoo, char *estr)
 {
 	_eputs(infoo->fname);
 	_eputs(": ");
@@ -47,13 +47,13 @@ void print_error(info_t *infoo, char *estr)
 }
 
 /**
- * print_d - function prints a decimal (integer) number (base 10)
+ * shell_print_d - function prints a decimal (integer) number (base 10)
  * @input: the input
  * @fdd: the filedescriptor to write to
  *
  * Return: number of characters printed
  */
-int print_d(int input, int fdd)
+int shell_print_d(int input, int fdd)
 {
 	int (*__putchar)(char) = _putchar;
 	int i, count = 0;
@@ -86,14 +86,14 @@ int print_d(int input, int fdd)
 }
 
 /**
- * convert_number - converter function, a clone of itoa
+ * shell_convert_number - converter function, a clone of itoa
  * @num: number
  * @base: base
  * @flag: argument flags
  *
  * Return: string
  */
-char *convert_number(long int num, int base, int flag)
+char *shell_convert_number(long int num, int base, int flag)
 {
 	static char *array;
 	static char buffer[50];
@@ -122,12 +122,12 @@ char *convert_number(long int num, int base, int flag)
 }
 
 /**
- * remove_comments - function replaces first instance of '#' with '\0'
+ * shell_remove_comments - function replaces first instance of '#' with '\0'
  * @buff: address of the string to modify
  *
  * Return: Always 0;
  */
-void remove_comments(char *buff)
+void shell_remove_comments(char *buff)
 {
 	int i;
 
