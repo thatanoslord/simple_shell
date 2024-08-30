@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * *shell_get_history_file - gets the history file
+ * get_history_file - gets the history file
  * @infoo: parameter struct
  *
  * Return: allocated string containg history file
  */
 
-char *shell_get_history_file(info_t *infoo)
+char *get_history_file(info_t *infoo)
 {
 	char *buf, *dir;
 
@@ -25,12 +25,12 @@ char *shell_get_history_file(info_t *infoo)
 }
 
 /**
- * shell_write_history - creates a file, or appends to an existing file
+ * write_history - creates a file, or appends to an existing file
  * @infoo: the parameter struct
  *
  * Return: 1 on success, else -1
  */
-int shell_write_history(info_t *infoo)
+int write_history(info_t *infoo)
 {
 	ssize_t fd;
 	char *filename = get_history_file(infoo);
@@ -54,12 +54,12 @@ int shell_write_history(info_t *infoo)
 }
 
 /**
- * shell_read_history - reads history from file
+ * read_history - reads history from file
  * @infoo: the parameter struct
  *
  * Return: histcount on success, 0 otherwise
  */
-int shell_read_history(info_t *infoo)
+int read_history(info_t *infoo)
 {
 	int i, last = 0, linecount = 0;
 	ssize_t fd, rdlen, fsize = 0;
@@ -103,14 +103,14 @@ int shell_read_history(info_t *infoo)
 }
 
 /**
- * shell_build_history_list - adds entry to a history linked list
+ * build_history_list - adds entry to a history linked list
  * @infoo: Structure containing potential arguments. Used to maintain
  * @buf: buffer
  * @linecount: the history linecount, histcount
  *
  * Return: Always 0
  */
-int shell_build_history_list(info_t *infoo, char *buf, int linecount)
+int build_history_list(info_t *infoo, char *buf, int linecount)
 {
 	list_t *node = NULL;
 
@@ -124,12 +124,12 @@ int shell_build_history_list(info_t *infoo, char *buf, int linecount)
 }
 
 /**
- * shell_renumber_history - renumbers the history linked list after changes
+ * renumber_history - renumbers the history linked list after changes
  * @infoo: Structure containing potential arguments. Used to maintain
  *
  * Return: the new histcount
  */
-int shell_renumber_history(info_t *infoo)
+int renumber_history(info_t *infoo)
 {
 	list_t *node = infoo->history;
 	int i = 0;
