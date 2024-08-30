@@ -1,25 +1,25 @@
 #include "shell.h"
 
 /**
- * _myenv - prints the current environment
+ * shell_myenv- prints the current environment
  * @infoo: Structure containing potential arguments. Used to maintain
  *          constant function prototype.
  * Return: Always 0
  */
-int _myenv(info_t *infoo)
+int shell_myenv(info_t *infoo)
 {
 	print_list_str(infoo->env);
 	return (0);
 }
 
 /**
- * _getenv - gets the value of an environ variable
+ * *shell_getenv - gets the value of an environ variable
  * @infoo: Structure containing potential arguments. Used to maintain
  * @name: env var name
  *
  * Return: the value
  */
-char *_getenv(info_t *infoo, const char *name)
+char *shell_getenv(info_t *infoo, const char *name)
 {
 	list_t *node = infoo->env;
 	char *p;
@@ -35,13 +35,13 @@ char *_getenv(info_t *infoo, const char *name)
 }
 
 /**
- * _mysetenv - Initialize a new environment variable,
+ * shell_mysetenv - Initialize a new environment variable,
  *             or modify an existing one
  * @infoo: Structure containing potential arguments. Used to maintain
  *        constant function prototype.
  *  Return: Always 0
  */
-int _mysetenv(info_t *infoo)
+int shell_mysetenv(info_t *infoo)
 {
 	if (infoo->argc != 3)
 	{
@@ -54,12 +54,12 @@ int _mysetenv(info_t *infoo)
 }
 
 /**
- * _myunsetenv - Remove an environment variable
+ * shell_myunsetenv - Remove an environment variable
  * @infoo: Structure containing potential arguments. Used to maintain
  *        constant function prototype.
  *  Return: Always 0
  */
-int _myunsetenv(info_t *infoo)
+int shell_myunsetenv(info_t *infoo)
 {
 	int i;
 
@@ -75,12 +75,12 @@ int _myunsetenv(info_t *infoo)
 }
 
 /**
- * populate_env_list - populates env linked list
+ * shell_populate_env_list - populates env linked list
  * @infoo: Structure containing potential arguments. Used to maintain
  *          constant function prototype.
  * Return: Always 0
  */
-int populate_env_list(info_t *infoo)
+int shell_populate_env_list(info_t *infoo)
 {
 	list_t *node = NULL;
 	size_t i;
