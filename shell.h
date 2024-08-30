@@ -160,7 +160,7 @@ void *_realloc(void *, unsigned int, unsigned int);
 /* toem_memory.c */
 int bfree(void **);
 
-/* toem_atoi.c */
+/* _artoint.c */
 int interactive(info_t *);
 int is_delim(char, char *);
 int _isalpha(int);
