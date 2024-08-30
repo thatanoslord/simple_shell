@@ -45,12 +45,12 @@ ssize_t input_buf(info_t *infoo, char **buf, size_t *len)
 }
 
 /**
- * shell_get_input - gets a line minus the newline
+ * get_input - gets a line minus the newline
  * @infoo: parameter struct
  *
  * Return: bytes read
  */
-ssize_t shell_get_input(info_t *infoo)
+ssize_t get_input(info_t *infoo)
 {
 	static char *buf; /* the ';' command chain buffer */
 	static size_t i, j, len;
@@ -110,14 +110,14 @@ ssize_t read_buf(info_t *infoo, char *buf, size_t *i)
 }
 
 /**
- * shell_getline - gets the next line of input from STDIN
+ * _getline - gets the next line of input from STDIN
  * @infoo: parameter struct
  * @ptr: address of pointer to buffer, preallocated or NULL
  * @length: size of preallocated ptr buffer if not NULL
  *
  * Return: s
  */
-int shell_getline(info_t *infoo, char **ptr, size_t *length)
+int _getline(info_t *infoo, char **ptr, size_t *length)
 {
 	static char buf[READ_BUF_SIZE];
 	static size_t i, len;
@@ -157,12 +157,12 @@ int shell_getline(info_t *infoo, char **ptr, size_t *length)
 }
 
 /**
- * shell_sigintHandler - blocks ctrl-C
+ * sigintHandler - blocks ctrl-C
  * @sig_num: the signal number
  *
  * Return: void
  */
-void shell_sigintHandler(__attribute__((unused))int sig_num)
+void sigintHandler(__attribute__((unused))int sig_num)
 {
 	_puts("\n");
 	_puts("$ ");
