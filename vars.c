@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * shell_is_chain - test if current char in buffer is a chain delimeter
+ * is_chain - test if current char in buffer is a chain delimeter
  * @infoo: the parameter struct
  * @buf: the char buffer
  * @p: address of current position in buf
  *
  * Return: 1 if chain delimeter, 0 otherwise
  */
-int shell_is_chain(info_t *infoo, char *buf, size_t *p)
+int is_chain(info_t *infoo, char *buf, size_t *p)
 {
 	size_t j = *p;
 
@@ -36,7 +36,7 @@ int shell_is_chain(info_t *infoo, char *buf, size_t *p)
 }
 
 /**
- * shell_check_chain - checks we should continue chaining based on last status
+ * check_chain - checks we should continue chaining based on last status
  * @infoo: the parameter struct
  * @buf: the char buffer
  * @p: address of current position in buf
@@ -45,7 +45,7 @@ int shell_is_chain(info_t *infoo, char *buf, size_t *p)
  *
  * Return: Void
  */
-void shell_check_chain(info_t *infoo, char *buf, size_t *p, size_t i, size_t len)
+void check_chain(info_t *infoo, char *buf, size_t *p, size_t i, size_t len)
 {
 	size_t j = *p;
 
@@ -70,12 +70,12 @@ void shell_check_chain(info_t *infoo, char *buf, size_t *p, size_t i, size_t len
 }
 
 /**
- * shell_replace_alias - replaces an aliases in the tokenized string
+ * replace_alias - replaces an aliases in the tokenized string
  * @infoo: the parameter struct
  *
  * Return: 1 if replaced, 0 otherwise
  */
-int shell_replace_alias(info_t *infoo)
+int replace_alias(info_t *infoo)
 {
 	int i;
 	list_t *node;
@@ -99,12 +99,12 @@ int shell_replace_alias(info_t *infoo)
 }
 
 /**
- * shell_replace_vars - replaces vars in the tokenized string
+ * replace_vars - replaces vars in the tokenized string
  * @infoo: the parameter struct
  *
  * Return: 1 if replaced, 0 otherwise
  */
-int shell_replace_vars(info_t *infoo)
+int replace_vars(info_t *infoo)
 {
 	int i = 0;
 	list_t *node;
@@ -140,13 +140,13 @@ int shell_replace_vars(info_t *infoo)
 }
 
 /**
- * shell_replace_string - replaces string
+ * replace_string - replaces string
  * @old: address of old string
  * @news: new string
  *
  * Return: 1 if replaced, 0 otherwise
  */
-int shell_replace_string(char **old, char *news)
+int replace_string(char **old, char *news)
 {
 	free(*old);
 	*old = news;
