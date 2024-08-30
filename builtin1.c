@@ -1,26 +1,26 @@
 #include "shell.h"
 
 /**
- * _myhistory - displays the history list, one command by line, preceded
+ * mshell_myhistory - displays the history list, one command by line, preceded
  *              with line numbers, starting at 0.
  * @infoo: Structure containing potential arguments. Used to maintain
  *        constant function prototype.
  *  Return: Always 0
  */
-int _myhistory(info_t *infoo)
+int shell_myhistory(info_t *infoo)
 {
 	print_list(infoo->history);
 	return (0);
 }
 
 /**
- * unset_alias - sets alias to string
+ * shell_myalias - sets alias to string
  * @infoo: parameter struct
  * @strs: the string alias
  *
  * Return: Always 0 on success, 1 on error
  */
-int unset_alias(info_t *infoo, char *strs)
+int shell_myalias(info_t *infoo, char *strs)
 {
 	char *p, c;
 	int ret;
